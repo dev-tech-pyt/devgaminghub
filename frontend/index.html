@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#100D1C" />
+    <meta name="description" content="Discover games and explore a community-powered gaming marketplace." />
+    <title>DEV-GAMING | Play. Trade. Repeat.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/logo.svg?v=3" type="image/svg+xml" />
+    <link rel="preload" href="assets/marketplace-scene.svg?v=3" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="style.css?v=5" />
+</head>
+
+<body>
+    <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
+        <div class="loading-brand">
+            <img src="assets/logo.svg?v=3" alt="" width="58" height="58" />
+            <span>DEV<span class="brand-accent">/</span>GAMING</span>
+        </div>
+        <p class="loading-caption">PREPARING YOUR GAME SHELF</p>
+        <div class="loading-track" aria-hidden="true"><span></span></div>
+    </div>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header glass">
+        <div class="container header-inner">
+            <button class="brand" type="button" data-page="home" aria-label="DEV-GAMING home">
+                <img src="assets/logo.svg?v=3" alt="" width="38" height="38" />
+                <span>DEV<span class="brand-accent">/</span>GAMING</span>
+            </button>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-link active" type="button" data-page="home">Discover</button>
+                <button class="nav-link" type="button" data-page="sell">Sell a game</button>
+                <button class="nav-link" type="button" data-page="promos">Promotions</button>
+                <button class="nav-link" type="button" data-page="about">About</button>
+                <button class="nav-link" type="button" data-page="contact">Contact</button>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to light theme"
+                    title="Switch theme">
+                    <span id="theme-icon" aria-hidden="true">☼</span>
+                </button>
+                <button id="saved-btn" class="header-pill" type="button" aria-label="Open saved games">
+                    <span aria-hidden="true">♡</span><span class="optional-label">Saved</span><span id="saved-count"
+                        class="count-badge">0</span>
+                </button>
+                <button id="cart-btn" class="header-pill" type="button" aria-label="Open your cart">
+                    <span aria-hidden="true">▱</span><span class="optional-label">Cart</span><span id="cart-count"
+                        class="count-badge">0</span>
+                </button>
+                <div id="guest-actions" class="auth-buttons">
+                    <button id="open-login-btn" class="btn btn-quiet" type="button">Log in</button>
+                    <button id="open-signup-btn" class="btn btn-primary" type="button">Join free</button>
+                </div>
+                <div id="user-actions" class="user-badge hidden">
+                    <span id="user-greeting" class="user-greeting"></span>
+                    <button id="logout-btn" class="btn btn-quiet" type="button">Log out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container page-container">
+        <section id="page-home" class="page-view active" aria-labelledby="hero-title">
+            <section class="hero-panel">
+                <div class="hero-backdrop" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <span class="eyebrow"><span class="status-dot"></span> THE COMMUNITY GAME MARKETPLACE</span>
+                    <h1 id="hero-title">Your next <span class="text-gradient">great game</span> is out there.</h1>
+                    <p>Find your next favorite, browse what players are listing, or make room on your shelf by selling a
+                        game.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" type="button" data-page="home"
+                            data-scroll-catalog>Explore games <span aria-hidden="true">↗</span></button>
+                        <button class="btn btn-glass btn-large" type="button" data-page="sell">List a game <span
+                                aria-hidden="true">＋</span></button>
+                    </div>
+                    <div class="hero-proof">
+                        <span class="proof-avatar" aria-hidden="true">✦</span>
+                        <span>A marketplace made for players, by players</span>
+                    </div>
+                </div>
+                <div class="hero-art-caption glass-subtle">
+                    <span class="caption-icon" aria-hidden="true">⌁</span>
+                    <span><strong>Find your next level</strong><small>Discover games worth playing</small></span>
+                </div>
+            </section>
+
+            <section class="quick-benefits" aria-label="Marketplace highlights">
+                <article class="benefit-card glass">
+                    <span class="benefit-icon" aria-hidden="true">⌕</span>
+                    <div>
+                        <h2>Discover</h2>
+                        <p>Browse a handpicked game catalog.</p>
+                    </div>
+                </article>
+                <article class="benefit-card glass">
+                    <span class="benefit-icon benefit-icon-violet" aria-hidden="true">↗</span>
+                    <div>
+                        <h2>List your games</h2>
+                        <p>Share what you're ready to pass on.</p>
+                    </div>
+                </article>
+                <article class="benefit-card glass">
+                    <span class="benefit-icon benefit-icon-blue" aria-hidden="true">♡</span>
+                    <div>
+                        <h2>Save for later</h2>
+                        <p>Keep your favorites close at hand.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="catalog-section" class="catalog-section">
+                <div class="section-topline">
+                    <div>
+                        <span class="eyebrow">THE GAME SHELF</span>
+                        <h2>Find your next favorite</h2>
+                        <p id="catalog-subtitle" class="muted">Browse popular picks and community listings.</p>
+                    </div>
+                    <label class="search-box">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="search-input" type="search" placeholder="Search games..."
+                            aria-label="Search games" />
+                        <kbd>Ctrl K</kbd>
+                    </label>
+                </div>
+                <div class="catalog-toolbar">
+                    <div class="filter-pills" role="group" aria-label="Filter games">
+                        <button class="filter-pill active" type="button" data-filter="games">All games</button>
+                        <button class="filter-pill" type="button" data-filter="community">Community listings</button>
+                        <button class="filter-pill" type="button" data-filter="extras">Gaming extras</button>
+                    </div>
+                    <span id="result-count" class="result-count" aria-live="polite"></span>
+                </div>
+                <div id="genre-filters" class="filter-pills genre-filters" role="group" aria-label="Filter by game genre"></div>
+                <p class="catalog-note">Select a game for its details, official website and download options. Downloads open on the publisher or store site.</p>
+                <div id="catalog-grid" class="card-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="sell-callout glass">
+                <div class="callout-mark" aria-hidden="true"><img src="assets/logo.svg?v=3" alt="" /></div>
+                <div><span class="eyebrow">READY FOR A NEW QUEST?</span>
+                    <h2>Give your games a second life.</h2>
+                    <p>Share your listing with fellow players and clear a little space for what's next.</p>
+                </div>
+                <button class="btn btn-primary" type="button" data-page="sell">Start a listing <span
+                        aria-hidden="true">→</span></button>
+            </section>
+        </section>
+
+        <section id="page-sell" class="page-view" aria-labelledby="sell-title" hidden>
+            <div class="page-heading">
+                <span class="eyebrow">PLAYER MARKETPLACE</span>
+                <h1 id="sell-title">List a game <span class="text-gradient">for the next player.</span></h1>
+                <p>Tell the community what you're selling. Add a clear description and a fair asking price.</p>
+            </div>
+            <div class="sell-layout">
+                <form id="sell-form" class="form-card glass">
+                    <h2>Game details</h2>
+                    <label class="field"><span>Game title</span><input id="sell-title-input" name="title" required
+                            maxlength="70" placeholder="e.g. The Last of Us Part II" /></label>
+                    <div class="field-row">
+                        <label class="field"><span>Platform</span><select id="sell-platform" name="platform" required>
+                                <option value="">Choose platform</option>
+                                <option>PlayStation 5</option>
+                                <option>PlayStation 4</option>
+                                <option>Xbox Series X|S</option>
+                                <option>Xbox One</option>
+                                <option>Nintendo Switch</option>
+                                <option>PC / Steam</option>
+                                <option>Other</option>
+                            </select></label>
+                        <label class="field"><span>Condition</span><select id="sell-condition" name="condition"
+                                required>
+                                <option>Like new</option>
+                                <option>Very good</option>
+                                <option>Good</option>
+                                <option>Digital key</option>
+                            </select></label>
+                    </div>
+                    <label class="field"><span>Asking price (USD)</span>
+                        <div class="input-prefix"><span>$</span><input id="sell-price" name="price" type="number"
+                                required min="1" max="9999" step="0.01" placeholder="24.99" /></div>
+                    </label>
+                    <label class="field"><span>Description <small>Optional</small></span><textarea id="sell-description"
+                            name="description" maxlength="400" rows="4"
+                            placeholder="Share a little about the game and what's included."></textarea></label>
+                    <p id="sell-feedback" class="form-feedback" role="status"></p>
+                    <button class="btn btn-primary btn-large full-width" type="submit">Preview my listing <span
+                            aria-hidden="true">→</span></button>
+                    <p class="form-note">Prototype: listings are saved in this browser only. They are not published to a
+                        live marketplace.</p>
+                </form>
+                <aside class="seller-aside glass">
+                    <span class="aside-icon" aria-hidden="true">✦</span>
+                    <h2>Make a great listing</h2>
+                    <ul class="tip-list">
+                        <li><span>01</span>Use the full game title and platform.</li>
+                        <li><span>02</span>Be upfront about condition and what's included.</li>
+                        <li><span>03</span>Set a price you would feel good about paying.</li>
+                    </ul>
+                    <div class="seller-note"><strong>Good to know</strong>
+                        <p>Payments, buyer messaging and shipping aren't connected yet. Listings stay on this device for
+                            now.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="page-promos" class="page-view" aria-labelledby="promos-title" hidden>
+            <div class="page-heading">
+                <span class="eyebrow">GOOD FINDS, BETTER PLAY</span>
+                <h1 id="promos-title">A little more <span class="text-gradient">game for your money.</span></h1>
+                <p>Explore featured picks and get inspired for your next play session.</p>
+            </div>
+            <div class="promo-grid">
+                <article class="promo-card promo-card-featured"><span class="promo-label">FEATURED PICK</span>
+                    <div class="promo-art promo-art-neon"></div>
+                    <div class="promo-copy"><span class="eyebrow">OPEN-WORLD FAVORITE</span>
+                        <h2>Make Night City yours.</h2>
+                        <p>Explore the catalog and discover a new world to get lost in.</p><button class="text-link"
+                            type="button" data-page="home" data-search="Cyberpunk">Explore games <span
+                                aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+                <article class="promo-card"><span class="promo-label">COMMUNITY SPOTLIGHT</span>
+                    <div class="promo-art promo-art-adventure"></div>
+                    <div class="promo-copy"><span class="eyebrow">YOUR NEXT ADVENTURE</span>
+                        <h2>Find a story worth staying up for.</h2>
+                        <p>Browse story-driven favorites from the game shelf.</p><button class="text-link" type="button"
+                            data-page="home" data-search="story">Browse the shelf <span
+                                aria-hidden="true">→</span></button>
+                    </div>
+                </article>
+                <article class="promo-disclaimer">Promotional cards are editorial previews. No discount codes or special
+                    prices are active in this prototype.</article>
+            </div>
+        </section>
+
+        <section id="page-about" class="page-view" aria-labelledby="about-title" hidden>
+            <div class="page-heading">
+                <span class="eyebrow">OUR STORY</span>
+                <h1 id="about-title">Good games are <span class="text-gradient">better shared.</span></h1>
+                <p>DEV-GAMING is a concept for a simpler, more welcoming place to discover games and connect players
+                    with their next favorite.</p>
+            </div>
+            <div class="about-grid">
+                <article class="about-card glass"><span class="benefit-icon" aria-hidden="true">⌕</span>
+                    <h2>Discover with ease</h2>
+                    <p>A clear catalog, useful filters and saved favorites make finding your next game simple.</p>
+                </article>
+                <article class="about-card glass"><span class="benefit-icon benefit-icon-violet"
+                        aria-hidden="true">↗</span>
+                    <h2>Keep games moving</h2>
+                    <p>Our vision is a player-first marketplace where games find new homes and new players.</p>
+                </article>
+                <article class="about-card glass"><span class="benefit-icon benefit-icon-blue"
+                        aria-hidden="true">◇</span>
+                    <h2>Built for trust</h2>
+                    <p>Clear listings, honest condition details and secure payments are important parts of the
+                        experience we're working toward.</p>
+                </article>
+            </div>
+            <div class="about-footnote glass"><strong>Where we are today</strong>
+                <p>This site is an early prototype. Account and saved-game features use the existing API; seller
+                    listings and checkout are not connected to a live marketplace yet.</p><button
+                    class="btn btn-secondary" type="button" data-page="contact">Get in touch</button>
+            </div>
+        </section>
+
+        <section id="page-contact" class="page-view" aria-labelledby="contact-title" hidden>
+            <div class="page-heading">
+                <span class="eyebrow">WE'RE LISTENING</span>
+                <h1 id="contact-title">Let's talk <span class="text-gradient">games.</span></h1>
+                <p>Have an idea, spotted a problem, or want to help shape the marketplace? Send us a note.</p>
+            </div>
+            <div class="contact-layout">
+                <form id="contact-form" class="form-card glass">
+                    <h2>Send a message</h2>
+                    <label class="field"><span>Your name</span><input name="name" required maxlength="80"
+                            placeholder="Player name" /></label>
+                    <label class="field"><span>Email address</span><input name="email" type="email" required
+                            maxlength="120" placeholder="you@example.com" /></label>
+                    <label class="field"><span>What's on your mind?</span><textarea name="message" required
+                            maxlength="1200" rows="5" placeholder="Write your message..."></textarea></label>
+                    <p id="contact-feedback" class="form-feedback" role="status"></p>
+                    <button class="btn btn-primary btn-large full-width" type="submit">Prepare message <span
+                            aria-hidden="true">→</span></button>
+                    <p class="form-note">Contact delivery isn't connected yet. Your message won't be sent or stored.</p>
+                </form>
+                <aside class="contact-aside glass"><span class="aside-icon" aria-hidden="true">✉</span>
+                    <h2>Built around the community</h2>
+                    <p>Your feedback helps us make the experience more useful, welcoming and straightforward for
+                        players.</p>
+                    <div class="contact-methods">
+                        <a class="contact-method" href="tel:+2348109423545">
+                            <span class="contact-method-icon" aria-hidden="true">☎</span>
+                            <span><small>Call us</small><strong>+234 810 942 3545</strong></span>
+                            <span class="contact-method-arrow" aria-hidden="true">↗</span>
+                        </a>
+                        <a class="btn btn-primary full-width" href="https://wa.me/2348109423545"
+                            target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span
+                                aria-hidden="true">↗</span></a>
+                    </div>
+                    <div class="seller-note"><strong>Current availability</strong>
+                        <p>The contact form is a preview and does not send data. Call or WhatsApp us using the details
+                            above.</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <button class="brand footer-brand" type="button" data-page="home"><img src="assets/logo.svg?v=3" alt=""
+                    width="34" height="34" /><span>DEV<span class="brand-accent">/</span>GAMING</span></button>
+            <p>Play more. Pass it on.</p>
+            <nav aria-label="Footer navigation"><button type="button" data-page="about">About</button><button
+                    type="button" data-page="contact">Contact</button><button type="button"
+                    data-page="promos">Promotions</button></nav>
+        </div>
+        <div class="container footer-bottom"><span>© <span id="current-year"></span> DEV-GAMING</span><span>Marketplace
+                prototype · Checkout not enabled</span></div>
+    </footer>
+
+    <aside id="saved-drawer" class="side-drawer glass hidden" aria-label="Saved games" aria-hidden="true">
+        <div class="drawer-header">
+            <div><span class="eyebrow">YOUR COLLECTION</span>
+                <h2>Saved games</h2>
+            </div><button id="close-saved-btn" class="icon-button" type="button"
+                aria-label="Close saved games">×</button>
+        </div>
+        <div id="saved-list" class="drawer-body"></div>
+    </aside>
+    <aside id="cart-drawer" class="side-drawer glass hidden" aria-label="Shopping cart" aria-hidden="true">
+        <div class="drawer-header">
+            <div><span class="eyebrow">YOUR PICKS</span>
+                <h2>Your cart</h2>
+            </div><button id="close-cart-btn" class="icon-button" type="button" aria-label="Close cart">×</button>
+        </div>
+        <div id="cart-list" class="drawer-body"></div>
+        <div class="cart-summary">
+            <div class="cart-total"><span>Estimated total</span><strong id="cart-total">$0.00</strong></div><button
+                id="checkout-btn" class="btn btn-primary full-width" type="button">Continue to checkout</button>
+            <p class="form-note">Preview only. No payment will be taken.</p>
+        </div>
+    </aside>
+    <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div id="game-detail-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="game-detail-title">
+        <article class="game-detail-card glass">
+            <button id="close-game-detail" class="icon-button detail-close" type="button" aria-label="Close game details">×</button>
+            <div class="detail-art">
+                <img id="detail-image" src="" alt="" />
+                <span id="detail-badge" class="detail-badge"></span>
+            </div>
+            <div class="detail-content">
+                <span id="detail-genre" class="eyebrow"></span>
+                <h2 id="game-detail-title"></h2>
+                <p id="detail-platform" class="detail-platform"></p>
+                <p id="detail-description" class="detail-description"></p>
+                <div class="detail-actions">
+                    <a id="detail-official-link" class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">Official game website <span aria-hidden="true">↗</span></a>
+                    <a id="detail-download-link" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Download / get the game <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="form-note">Downloads and availability depend on the official publisher or platform. DEV-GAMING does not host game files.</p>
+            </div>
+        </article>
+    </div>
+
+    <div id="auth-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true"
+        aria-labelledby="auth-modal-title">
+        <div class="modal-card glass">
+            <div class="modal-header">
+                <div class="auth-tabs"><button id="tab-login" class="tab-btn active" type="button">Log
+                        in</button><button id="tab-signup" class="tab-btn" type="button">Join free</button></div><button
+                    id="close-auth-btn" class="icon-button" type="button" aria-label="Close dialog">×</button>
+            </div>
+            <span class="eyebrow">WELCOME TO THE COMMUNITY</span>
+            <h2 id="auth-modal-title" class="modal-title">Welcome back</h2>
+            <p id="auth-feedback" class="auth-feedback" role="status"></p>
+            <form id="login-form" class="auth-form">
+                <label class="field"><span>Email</span><input id="login-email" type="email" required
+                        autocomplete="email" placeholder="you@example.com" /></label>
+                <label class="field"><span>Password</span><input id="login-password" type="password" required
+                        autocomplete="current-password" placeholder="Your password" /></label>
+                <button class="btn btn-primary btn-large full-width" type="submit">Log in</button>
+            </form>
+            <form id="signup-form" class="auth-form hidden">
+                <label class="field"><span>Username</span><input id="signup-username" type="text" required minlength="2"
+                        maxlength="40" autocomplete="username" placeholder="Choose a username" /></label>
+                <label class="field"><span>Email</span><input id="signup-email" type="email" required
+                        autocomplete="email" placeholder="you@example.com" /></label>
+                <label class="field"><span>Password</span><input id="signup-password" type="password" required
+                        minlength="6" autocomplete="new-password" placeholder="At least 6 characters" /></label>
+                <button class="btn btn-primary btn-large full-width" type="submit">Create your account</button>
+            </form>
+        </div>
+    </div>
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>
